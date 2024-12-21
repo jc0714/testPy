@@ -1,3 +1,5 @@
+#cashFlow.py
+
 import datetime
 
 class PaymentSystem:
@@ -28,7 +30,7 @@ class PaymentSystem:
             return False  # 餘額不足
 
         # 扣款並記錄交易
-        self.accounts[user_id] -= amount
+        self.accounts[user_id] += amount
         self.record_transaction(user_id, amount)
         return True
 
@@ -51,7 +53,7 @@ class PaymentSystem:
         """查詢用戶的交易記錄"""
         return [t for t in self.transaction_history if t["user_id"] == user_id]
 
-# 初始化系統
+# 實例化系統
 system = PaymentSystem()
 
 # 建立帳戶

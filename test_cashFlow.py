@@ -13,5 +13,8 @@ def test_cashFlow():
     balance = system.get_balance("Yun")  # 查詢餘額
     assert balance == 100.0, f"預期餘額為 100.0，但實際為 {balance}"
 
+    result = system.process_payment("Yun", 30.0)
+    assert result == 70.0
+
     print("測試通過：帳戶成功建立且初始餘額正確。")
     
