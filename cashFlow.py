@@ -30,7 +30,7 @@ class PaymentSystem:
             return False  # 餘額不足
 
         # 扣款並記錄交易
-        self.accounts[user_id] += amount
+        self.accounts[user_id] -= amount
         self.record_transaction(user_id, amount)
         return True
 
